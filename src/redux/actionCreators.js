@@ -37,7 +37,7 @@ export const getAllCourses = () => dispatch => {
   });
 };
 export const getAllTeachers = () => dispatch => {
-  Axios.get(`${API_URL}/cursos`).then(resp => {
+  Axios.get(`${API_URL}/profesores`).then(resp => {
     return dispatch({
       type: GET_ALL_TEACHERS,
       teachers: resp.data
@@ -54,7 +54,7 @@ export const getPost = id => dispatch => {
   });
 };
 export const getEspeciality = id => dispatch => {
-  Axios.get(`${API_URL}/especialidades/${id}`).then(resp => {
+  Axios.get(`${API_URL}/especialidad/${id}`).then(resp => {
     return dispatch({
       type: GET_SPECIALITY,
       speciality: resp.data
@@ -62,7 +62,7 @@ export const getEspeciality = id => dispatch => {
   });
 };
 export const getCourse = id => dispatch => {
-  Axios.get(`${API_URL}/cursos/${id}`).then(resp => {
+  Axios.get(`${API_URL}/curso/${id}`).then(resp => {
     return dispatch({
       type: GET_COURSE,
       course: resp.data

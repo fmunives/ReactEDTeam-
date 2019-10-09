@@ -17,7 +17,7 @@ const authentication = e => {
       localStorage.setItem('token', r.data.token);
       window.location = '/';
     })
-    .catch(e => console.log(e));
+    .catch(alert('Usuario y clave incorrecto'));
 };
 
 const Login = () => (
