@@ -4,6 +4,7 @@ import store from '../../redux/store';
 import { getCourse } from '../../redux/actionCreators';
 import Banner from '../Organisms/Banner';
 import Teacher from '../Organisms/Teacher';
+import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
   useEffect(() => {
@@ -49,9 +50,16 @@ const Course = ({ course }) => {
                   <div className='course-class l-section' key={t.id}>
                     <h3>{t.title}</h3>
                     <p>{t.subtitle}</p>
-                    <ul>
+                    <ul className='data-list'>
                       {t.content.map(c => (
-                        <li>{c.valor}</li>
+                        <li>
+                          <Link
+                            to={`/clases/${c.id}`}
+                            className='color dark-color'
+                          >
+                            {c.valor}
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                   </div>
